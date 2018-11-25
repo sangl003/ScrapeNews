@@ -1,0 +1,62 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Mongo Scraper</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/articles">Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-danger scrape-new" href="/scrape">SCRAPE NEW ARTICLES!</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-danger clear" href="/articles/:id">Find particular ARTICLES!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron text-center">
+  <div class="overlay">
+  </div>
+  <div class="background-image">
+  </div>
+  <div class="caption">
+    <h1>Mongo Scraper</h1>
+    <p>New York Times Edition</p>
+  </div>
+</div>
+{{!-- <a href="https://nameless-plateau-31981.herokuapp.com/scrape">Scrape!</a> --}}
+
+<div id="wrapper">
+    <h1>Note Scraper</h1>
+    <div class="card-header">
+    <div class="card-body">
+    <div id="articles"  class="card">
+        {{#each articles}}
+        <p data-id="{{this.id}}">
+            {{this.title}}
+            <br>
+            {{this.link}}
+         <a href="/articles/:{{this.id}}">view Article</a>
+        </p>
+        {{/each}}
+    </div>
+    </div>
+    </div>
+
+    <div id="notes"></div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>New York Times Mongo Scraper</p>
+  </div>
+</footer>

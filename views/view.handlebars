@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Mongo Scraper</a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <a class="btn btn-danger nav-link" href="/articles">Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-danger nav-link" href="/scrape">SCRAPE NEW ARTICLES!</a>
+      </li>
+      {{!-- <li class="nav-item">
+        <a class="btn btn-danger nav-link clear" href="/delete">Delete Note!</a>
+      </li>
+    --}}
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron text-center .bg-info">
+  <div class="caption">
+    <h1>Mongo Scraper</h1>
+    <p>New York Times Edition</p>
+  
+  </div>
+</div>
+
+<div id="wrapper">
+    <h1>Review Article {{articles.title}}</h1>
+    <div id="articles">      
+         <p data-id="{{articles.id}}">
+           Id: {{articles.id}} <br>
+           Title : {{articles.title}} <br>
+           Link: {{articles.link}} <br>
+           Notes : {{articles.note.id}} <br>
+           Note Title : {{articles.note.title}} <br>
+           Notes : {{articles.note.body}}
+          </p>                      
+   </div>
+   </div>          
+
+   <footer class="footer  jumbotron bg-primary" style="color:white">
+  <div class="container " >
+    <div class="row">
+    <div class="col-sm-9">
+    <p>New York Times Mongo Scraper</p>
+    </div>
+    <div class="col-sm-3">
+      Sharvari Sangle
+    </div>
+  </div>
+  </div>
+</footer>
